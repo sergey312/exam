@@ -3,5 +3,8 @@ class Car:
         self.brand = brand
         self.manuf_year = manuf_year
         self.model = model
-        self.cost = price
-        self.potential_cost = potential_price
+        self.price = price
+        self.potential_price = potential_price
+
+    def __repr__(self) -> str:
+        return f"{self.brand}, {self.manuf_year},{self.model}, {self.price}, {self.potential_price}"
