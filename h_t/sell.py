@@ -49,11 +49,11 @@ class SellService:
         if isinstance(self.employee_service.find_employee(full_name_employee), Employee):
             employee = self.employee_service.find_employee(full_name_employee)
         else:
-            raise TypeError("Employee is not in the list")
+            print("Employee is not in the list")
         if isinstance(self.car_service.find_car(model), Car):
             car = self.car_service.find_car(model)
         else:
-            raise TypeError("Car is not in the list")
+            print("Car is not in the list")
         date = generate_random_date("01.01.2020", "31.12.2024")
         # date = date.now()
         sell = Sell(employee, car, date, real_price)
