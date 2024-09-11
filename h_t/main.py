@@ -1,4 +1,5 @@
 from managment import Managment
+from work_with_file import File
 
 
 def main():
@@ -37,12 +38,15 @@ def main():
 
     managment.sell_service.add_sell(
         "Nikolai", "X5", 85000)
-    managment.sell_service.show_sells()
-    managment.sell_service.delete_sell("Nikolai", "Altima")
-    managment.sell_service.show_sells()
+    # managment.sell_service.show_sells()
+    # managment.sell_service.delete_sell("Nikolai", "Altima")
+    # managment.sell_service.show_sells()
     # print(managment.sell_service.show_profit())
     # print(managment.sell_service.show_best_seller())
-    # print(managment.sell_service.show_most_purchased_car())
+    managment.sell_service.show_sells()
+    save_in_file = File("D:\\Pyton35\\Python_VS\\exam\\exam\\h_t\\info.txt").my_decorator(
+        managment.sell_service.show_sells)
+    save_in_file()
 
 
 if __name__ == "__main__":

@@ -28,6 +28,8 @@ class SellService:
         if date2:
             date2 = datetime.strptime(date2, "%d.%m.%Y")
         for sell in self.sells:
+            if isinstance(sell.date, str):
+                sell.date = datetime.strptime(sell.date, "%d.%m.%Y")
             if date1 and date2:
                 if date1 <= sell.date <= date2:
                     if name_employee == "all" or sell.employee.full_name == name_employee:
@@ -63,9 +65,9 @@ class SellService:
                 self.sells.remove(sell)
                 print("Selling has been deleted")
 
-    def show_sells(self, date1=None,  date2=None):
+    def show_sells(self, date1=None,  date2=None, name_employee="all"):
         sells = self.__return_sells_by_date_and_empl(
-            date1, date2)
+            date1, date2, name_employee)
         for sell in sells:
             print(sell)
 
@@ -89,10 +91,10 @@ class SellService:
                 key_count[key] += 1
             else:
                 key_count[key] = 1
-
-        # Поиск модели с максимальным количеством вхождений
+        if not key_count:
+            return None
         most_common_key = max(key_count, key=key_count.get)
-        if key == "car":
+        if define == "car":
             car = self.car_service.find_car(most_common_key)
             return car
         else:

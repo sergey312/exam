@@ -1,0 +1,5 @@
+None
+Serhii Krolinski sold Tesla Model 3 2022 for 75000$, date is 2021-09-01 00:00:00
+Nikolai sold Nissan Altima 2019 for 25000$, date is 2021-05-05 00:00:00
+Serhii Krolinski sold BMW X5 2022 for 55000$, date is 2021-08-29 00:00:00
+Nikolai sold BMW X5 2022 for 85000$, date is 2021-02-06 00:00:00
